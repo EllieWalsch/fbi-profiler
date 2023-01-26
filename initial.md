@@ -263,3 +263,22 @@ Questions table
         question: Do you think change is good?
     }
 ]
+Category Table
+[
+    {
+        id:1
+        description: Emotion control
+    },
+    {
+        id:2
+        description: Direct thoughts
+    },
+    {
+        id:3
+        description: Confidence
+    },
+    {
+        id:4
+        description: Consistency
+    }
+]

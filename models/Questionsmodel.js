@@ -16,8 +16,16 @@ Question.init(
       allowNull: false,
     },
     category:{
+<<<<<<< HEAD
         type:DataTypes.INTEGER,
         references:Category.id
+=======
+      type:DataTypes.INTEGER,
+      references: {
+        model: "category",
+        key: "id"
+      }
+>>>>>>> 1dcada3e8a58d314e323bb1d949d1419d56c87d0
     },
   },
   {

@@ -1,0 +1,34 @@
+[
+    {
+        "category":1,
+        "question": "How do you feel about today?"
+    },
+    {
+        "category":1,
+        "question": "How do you feel about your friend?"
+    },
+    {
+        "category":2,
+        "question": "What do you think about today?"
+    },
+    {
+        "category":2,
+        "question": "What do you think about your friends kids?"
+    },
+    {
+        "category":3,
+        "question": "What did you accomplish yesterday?"
+    },
+    {
+        "category":3,
+        "question": "Why did you fail last?"
+    },
+    {
+        "category":4,
+        "question": "Do you think today will be like yesterday?"
+    },
+    {
+        "category":4,
+        "question": "Do you think change is good?"
+    }
+]

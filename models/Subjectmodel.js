@@ -11,11 +11,7 @@ Subject.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    First_name: {
-      type: DataTypes.STRING,
-      allowNull: false,
-    },
-    Last_name: {
+    Name: {
       type: DataTypes.STRING,
       allowNull: false,
     },

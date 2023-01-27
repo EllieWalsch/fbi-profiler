@@ -74,11 +74,12 @@ a:hover, nav button:hover {
     border: 15px solid var(--accent1);
     border-radius: 47px;
     display: inline-block;
+    font-family: 'Share Tech Mono', monospace;
     transition: 0.3s ease;
     box-shadow: 0px 5px 6px -1px #4d4f4c;
 }
 
-.home button:hover {
+.home button:hover, #questionType button:hover, #questionForm button:hover, #askQuestion:hover {
     color: var(--accent2);
     border: 15px solid var(--accent2);
 }
@@ -116,7 +117,7 @@ a:hover, nav button:hover {
 .login {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
 }
 
 .login h2 {
@@ -132,7 +133,8 @@ a:hover, nav button:hover {
     display: flex;
     flex-direction: column;
     border: 10px solid var(--accent1);
-    margin: 60px;
+    margin: 35px;
+    box-shadow: 0px 5px 6px -1px #4d4f4c;
 }
 
 .login input {
@@ -140,6 +142,7 @@ a:hover, nav button:hover {
     border: none;
     border-radius: 25px;
     margin: 5px;
+    margin-bottom: 20px;
     font-size: 20px;
     font-family: 'Share Tech Mono', monospace;   
 }
@@ -158,3 +161,155 @@ a:hover, nav button:hover {
     font-size: 20px;
     font-family: 'Share Tech Mono', monospace;   
 }
+
+#questionType h2, #questionForm h2 {
+    text-align: center;
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--accent1);
+    font-size: 45px;
+}
+
+/* #questionType {
+    display: none;
+} */
+
+#questionType div {
+    display: flex;
+    justify-content: center;
+}
+
+#questionType button {
+    width: 200px;
+    margin: 30px;
+    background-color: var(--main);
+    color: var(--accent1);
+    font-family: Trebuchet MS;
+    font-size: 25px;
+    font-weight: 400;
+    font-style: bold;
+    text-decoration: none;
+    padding: 15px 15px;
+    border: 15px solid var(--accent1);
+    border-radius: 47px;
+    display: inline-block;
+    font-family: 'Share Tech Mono', monospace;
+    transition: 0.3s ease;
+    box-shadow: 0px 5px 6px -1px #4d4f4c;
+}
+
+#questionForm {
+    margin: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 700px;
+    margin: auto;
+  }
+  
+  input[type="range"]:focus {
+    outline: none;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    background-color: #cfdabd;
+    border-radius: 0.5rem;
+    height: 15px;
+  }
+  
+  /* slider thumb */
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    margin-top: -2.5px;
+    background-color: var(--accent1);
+    border-radius: 25px;
+    height: 20px;
+    width: 20px;
+  }
+  
+  input[type="range"]:focus::-webkit-slider-thumb {
+    outline: 3px solid var(--accent1);
+    outline-offset: 0.125rem;
+  }
+  
+  /*********** Firefox styles ***********/
+  /* slider track */
+  input[type="range"]::-moz-range-track {
+    background-color: #cfdabd;
+    border-radius: 0.5rem;
+    height: 15px;
+  }
+  
+  /* slider thumb */
+  input[type="range"]::-moz-range-thumb {
+    background-color: var(--accent1);
+    border: none; 
+    border-radius: 25px;
+    height: 20px;
+    width: 20px;
+  }
+  
+  input[type="range"]:focus::-moz-range-thumb{
+    outline: 3px solid var(--accent1);
+    outline-offset: 0.125rem;
+  }
+
+  #questionForm div {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #questionForm button {
+    width: 200px;
+    margin: auto;
+    background-color: var(--main);
+    color: var(--accent1);
+    font-family: Trebuchet MS;
+    font-size: 25px;
+    font-weight: 400;
+    font-style: bold;
+    text-decoration: none;
+    padding: 15px 15px;
+    border: 15px solid var(--accent1);
+    border-radius: 47px;
+    display: inline-block;
+    font-family: 'Share Tech Mono', monospace;
+    transition: 0.3s ease;
+    box-shadow: 0px 5px 6px -1px #4d4f4c;
+}
+
+#subjectProfile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#askQuestion {
+    width: 200px;
+    margin: 30px;
+    background-color: var(--main);
+    color: var(--accent1);
+    font-family: Trebuchet MS;
+    font-size: 25px;
+    font-weight: 400;
+    font-style: bold;
+    text-decoration: none;
+    padding: 15px 15px;
+    border: 15px solid var(--accent1);
+    border-radius: 47px;
+    display: inline-block;
+    font-family: 'Share Tech Mono', monospace;
+    transition: 0.3s ease;
+    box-shadow: 0px 5px 6px -1px #4d4f4c;
+  }
+
+  .profile h2 {
+    font-family: 'Share Tech Mono', monospace;
+  }

@@ -1,14 +1,18 @@
 [
     {
-        "description": "Emotion control"
+        "id": 1,
+        "category_name": "Emotion control"
     },
     {
-        "description": "Direct thoughts"
+        "id":2,
+        "category_name": "Direct thoughts"
     },
     {
-        "description": "Confidence"
+        "id":3,
+        "category_name": "Confidence"
     },
     {
-        "description": "Consistency"
+        "id":4,
+        "category_name": "Consistency"
     }
 ]

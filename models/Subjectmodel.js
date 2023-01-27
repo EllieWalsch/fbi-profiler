@@ -20,22 +20,25 @@ Subject.init(
       allowNull: false,
     },
     Type_one_answers: {
-      type: DataTypes.STRING ? ARRAY ?,
+      type: DataTypes.STRING,
       allowNull: false,
     },
     Type_two_answers: {
-        type: DataTypes.STRING ? ARRAY ?,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     Type_three_answers: {
-        type: DataTypes.STRING ? ARRAY ?,
+        type: DataTypes.STRING,
         allowNull: false,
     },
     Type_four_answers: {
-        type: DataTypes.STRING ? ARRAY ?,
+        type: DataTypes.STRING,
         allowNull: false,
     },
-
+    profile_assignment: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
   },
   {
     sequelize,

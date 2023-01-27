@@ -1,14 +1,14 @@
 const router = require("express").Router();
-const { Subject, Question, Type } = require("../models");
+const { Subject, Question, Category } = require("../models");
 const withAuth = require("../utils/auth");
 
-router.get("/", withAuth, async (req, res) => {
+router.get("/", async (req, res) => {
   try {
     const subjectData = await Subject.findAll();
 
     const subjects = subjectData.map((subject) => subject.get({ plain: true }));
 
-    res.render("homepage", { subjects });
+    res.render('homepage', {subjects});
   } catch (err) {
     res.status(500).json(err);
   }
@@ -33,7 +33,7 @@ router.get("/subject/:id", withAuth, async (req, res) => {
 router.get("/question/:id", withAuth, async (req, res) => {
   try {
     const questionData = await Question.findOne({
-      include: [Type],
+      include: [Category],
     });
 
     const questions = questionData.map((question) =>

@@ -1,0 +1,27 @@
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <header>
+      <h1>FBI Profiler</h1>
+      <nav>
+        {{#if loggedIn}}
+          <a href="/" id="home">Home</a>
+          <button>Logout</button>
+        {{else}}
+          <a href="/login" id="login">Login</a>
+        {{/if}}
+      </nav>
+    </header>
+    <main>
+      {{{body}}}
+    </main>
+  </body>
+</html>

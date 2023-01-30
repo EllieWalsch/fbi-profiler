@@ -8,7 +8,9 @@ router.get("/", async (req, res) => {
 
     const subjects = subjectData.map((subject) => subject.get({ plain: true }));
 
-    res.render('homepage', {subjects});
+    res.render('homepage', {subjects,
+      loggedIn: req.session.logged_in
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -22,7 +24,7 @@ router.get("/subject/:id", withAuth, async (req, res) => {
     const subject = subjectData.get({ plain: true });
 
     res.render("subject", {
-      ...subject,
+      subject,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -51,7 +53,7 @@ router.get("/question/:id", withAuth, async (req, res) => {
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to home
   if (req.session.logged_in) {
-    res.redirect("/homepage");
+    res.redirect("/");
     return;
   }
 

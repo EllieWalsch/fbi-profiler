@@ -4,6 +4,7 @@
 <div class="summary">
     {{#each subjects as |subject|}}
     <h2>{{subject.Name}}</h2>
+    <a href="/subject/{{subject.id}}">Access</a>
     <div class="typeSummary">
         <p>Type1: {{subject.Type_one_answers}}</p>
         <p>Type2: {{subject.Type_two_answers}}</p>

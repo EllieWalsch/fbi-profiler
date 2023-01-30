@@ -1,9 +1,19 @@
 <div class="home">
     <button id="addSubject">+ Subject</button>
-
-    {{!-- {{#each }}
-    {{> profile-summery}}
-    {{/each}} --}}
+</div>
+<div class="summary">
+    {{#each subjects as |subject|}}
+    <h2>{{subject.Name}}</h2>
+    <div class="typeSummary">
+        <p>Type1: {{subject.Type_one_answers}}</p>
+        <p>Type2: {{subject.Type_two_answers}}</p>
+        <p>Type3: {{subject.Type_three_answers}}</p>
+        <p>Type4: {{subject.Type_four_answers}}</p>
+    </div>
+    {{/each}}
+</div>
+    {{!-- {{> profile-summery}} --}}
+    
 <div class="summary">
     <h2>Nhat</h2>
     <div class="typeSummary">
@@ -12,5 +22,4 @@
         <p>Type3: 3</p>
         <p>Type4: 0</p>
     </div>
-</div>
 </div>

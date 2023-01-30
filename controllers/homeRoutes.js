@@ -24,7 +24,7 @@ router.get("/subject/:id", withAuth, async (req, res) => {
     const subject = subjectData.get({ plain: true });
 
     res.render("subject", {
-      subject,
+      subject, loggedIn: req.session.logged_in
     });
   } catch (err) {
     res.status(500).json(err);
@@ -32,17 +32,19 @@ router.get("/subject/:id", withAuth, async (req, res) => {
   // Loads subject page
 });
 
-router.get("/question/:id", withAuth, async (req, res) => {
+router.get("/questions", withAuth, async (req, res) => {
   try {
-    const questionData = await Question.findOne({
-      include: [Category],
+    // const questionData = await Question.findOne({
+    //   include: [Category],
+    // });
+
+    // const questions = questionData.map((question) =>
+    //   question.get({ plain: true })
+    // );
+
+    res.render("questions", {
+      loggedIn: req.session.logged_in
     });
-
-    const questions = questionData.map((question) =>
-      question.get({ plain: true })
-    );
-
-    res.render("question", { questions });
   } catch (err) {
     res.status(500).json(err);
   }

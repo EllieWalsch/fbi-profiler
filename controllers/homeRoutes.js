@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
   // Loads homepage (list of all subjects & their personality type)
 });
 
-router.get("/subject/:id", withAuth, async (req, res) => {
+router.get("/subject/:id", async (req, res) => {
   try {
     const subjectData = await Subject.findByPk(req.params.id);
 
@@ -29,6 +29,14 @@ router.get("/subject/:id", withAuth, async (req, res) => {
   }
   // Loads subject page
 });
+
+router.get("/add-subject", async (_,res) => {
+  try {
+    res.render("add-subject")
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 
 router.get("/question/:id", withAuth, async (req, res) => {
   try {

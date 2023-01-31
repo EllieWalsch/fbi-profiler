@@ -11,29 +11,29 @@ Subject.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    Name: {
+    name: {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    Type_one_answers: {
+    type_one_answers: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
-    Type_two_answers: {
+    type_two_answers: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
-    Type_three_answers: {
+    type_three_answers: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
-    Type_four_answers: {
+    type_four_answers: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     profile_assignment: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
   },
   {

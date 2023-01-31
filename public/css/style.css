@@ -78,7 +78,7 @@ a:hover, nav button:hover {
     box-shadow: 0px 5px 6px -1px #4d4f4c;
 }
 
-.home button:hover, #questionType button:hover, #questionForm button:hover, #askQuestion:hover {
+.home button:hover, #questionType button:hover, #questionForm button:hover, #askQuestion:hover, #createSubject:hover {
     color: var(--accent2);
     border: 15px solid var(--accent2);
 }
@@ -87,6 +87,7 @@ a:hover, nav button:hover {
     width: 40%;
     border: 10px solid var(--accent1);
     box-shadow: 0px 5px 6px -1px #4d4f4c;
+    margin-bottom: 50px;
 }
 
 .summary h2 {
@@ -96,6 +97,11 @@ a:hover, nav button:hover {
     color: var(--main);
     font-size: 50px;
     font-family: 'Share Tech Mono', monospace;
+    transition: 0.3s ease;
+}
+
+.summary h2:hover {
+  color: var(--accent2);
 }
 
 .typeSummary {
@@ -311,4 +317,79 @@ input[type="range"] {
 
   .profile h2 {
     font-family: 'Share Tech Mono', monospace;
+  }
+
+  #createSubject {
+    width: 200px;
+    margin: 30px;
+    background-color: var(--main);
+    color: var(--accent1);
+    font-family: Trebuchet MS;
+    font-size: 25px;
+    font-weight: 400;
+    font-style: bold;
+    text-decoration: none;
+    padding: 15px 15px;
+    border: 15px solid var(--accent1);
+    border-radius: 47px;
+    display: inline-block;
+    font-family: 'Share Tech Mono', monospace;
+    transition: 0.3s ease;
+    box-shadow: 0px 5px 6px -1px #4d4f4c;
+  }
+
+  #newSubject {
+    width: 500px;
+    height: 45px;
+    text-align: center;
+    background-color: #cfdabd;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 30px;
+    border: none;
+    border-radius: 25px;
+  }
+
+  #addSubject {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #addSubject button,  #addSubject input {
+    margin: auto;
+    margin-top: 30px;
+  }
+
+  #subjectProfile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 20px;
+  }
+
+  .summaryChart {
+    margin: auto;
+  }
+
+  .summaryChart p {
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--accent1);
+    width: 50%;
+  }
+
+  .summaryContent {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #chart {
+    width: 50%;
+  }
+
+  #askQuestion {
+    margin: auto;
+    margin-top: 30px;
+  }
+
+  a {
+    text-decoration: none;
   }

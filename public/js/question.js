@@ -1,19 +1,16 @@
-async function questionHandler(type) {
-  console.log(type);
+async function questionanswersaver(subject,value,type) {
     
-  
     if (type) {
-      const response = await fetch(`/api/question/${type}`, {
-        method: 'POST',
+      const response = await fetch(`/api/question/${subject}`, {
+        method: 'PUT',
+        body: JSON.stringify({ subject,value,type }),
         headers: { 'Content-Type': 'application/json' },
       });
   
       if (response.ok) {
-        let question = await response.json();
-        console.log(question.question)
-
+        document.location.replace(`/questions/${type}`);
       } else {
-        alert('Failed to get question');
+        alert('Failed to update subject answer');
       }
     }
   };
@@ -22,15 +19,18 @@ async function questionHandler(type) {
 
 
 
-let targetType;
+let answerValue;
 
 const listener = async (event) => {
     event.preventDefault();
-    targetType = event.target.value;
-    console.log(targetType);    
+    answerValue = event.target.value;
+    console.log(answerValue);    
 }
 const saver = async (event) =>{
-  console.log(targetType);
+  console.log(answerValue);
+  console.log(subjectTag);
+  console.log(questiontype);
+  questionanswersaver(subjectTag,answerValue,questiontype)
 }
 
 
@@ -38,3 +38,5 @@ const questionanswer =document.getElementById("questionValue");
 questionanswer.addEventListener("click", listener)
 const questionsubmit = document.getElementById("questionSubmit")
 questionsubmit.addEventListener("click",saver)
+const subjectTag = document.getElementById("subjectName").innerHTML
+const questiontype = document.getElementById("questionTypeNumber").innerHTML

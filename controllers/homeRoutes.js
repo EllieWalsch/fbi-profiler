@@ -2,6 +2,10 @@ const router = require("express").Router();
 const { Subject, Question, Category } = require("../models");
 const withAuth = require("../utils/auth");
 let date = Date.now() % 1000;
+let subjectPass;
+
+
+
 
 router.get("/", async (req, res) => {
   try {
@@ -23,6 +27,8 @@ router.get("/subject/:id", async (req, res) => {
     const subjectData = await Subject.findByPk(req.params.id);
 
     const subject = subjectData.get({ plain: true });
+    
+    subjectPass = req.params.id
 
     res.render("subject", {
       subject, loggedIn: req.session.logged_in
@@ -50,11 +56,15 @@ router.get("/questions/:id", withAuth, async (req, res) => {
         category_id: req.params.id
       }
     })
-    
+    const subjectData = await Subject.findByPk(subjectPass);
+
+    const subject = subjectData.get({ plain: true });
+
+
     const questions = questionsData.map((question) => question.get({ plain: true }));
     const question = questions[Math.floor(date * Math.random() * (date * 1000000)) %
       questions.length]
-    res.render("questions", { question,
+    res.render("subject", { subject, question,
       loggedIn: req.session.logged_in
     });
   } catch (err) {
@@ -85,6 +95,7 @@ router.get("/login", (req, res) => {
   res.render("login");
   // Loads login page
 });
+
 
 
 module.exports = router;

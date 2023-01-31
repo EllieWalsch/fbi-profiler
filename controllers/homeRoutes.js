@@ -59,12 +59,13 @@ router.get("/question/:id", withAuth, async (req, res) => {
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to home
   if (req.session.logged_in) {
-    res.redirect("/homepage");
+    res.redirect("/");
     return;
   }
 
   res.render("login");
   // Loads login page
 });
+
 
 module.exports = router;

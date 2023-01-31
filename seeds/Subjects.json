@@ -1,10 +1,10 @@
 [
     {
-        "Name": "Nhat",
-        "Type_one_answers": "[0]",
-        "Type_two_answers": "[0]",
-        "Type_three_answers": "[0]",
-        "Type_four_answers": "[0]",
+        "name": "Nhat",
+        "type_one_answers": "[0]",
+        "type_two_answers": "[0]",
+        "type_three_answers": "[0]",
+        "type_four_answers": "[0]",
         "profile_assignment": "accountant/innovator"
     }
 ]

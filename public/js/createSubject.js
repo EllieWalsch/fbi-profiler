@@ -7,6 +7,5 @@ subjectBtn.addEventListener('click', (event) => {
         method: "POST",
         body: JSON.stringify({ name: subjectName }),
         headers: { "Content-Type": "application/json" },
-      });
-    document.location.replace("/")
+      }).then(()=> document.location.replace("/"))
 });

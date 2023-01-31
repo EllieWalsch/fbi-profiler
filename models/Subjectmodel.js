@@ -33,7 +33,7 @@ Subject.init(
     },
     profile_assignment: {
         type: DataTypes.STRING,
-        defaultValue: "[0]",
+        allowNull: true,
     },
   },
   {

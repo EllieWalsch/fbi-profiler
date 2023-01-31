@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { Question } = require("../../models");
 const withAuth = require("../../utils/auth");
-let date = Date.now() % 1000;
+// let date = Date.now() % 1000;
 
 router.post("/new", withAuth, async (req, res) => {
   try {
@@ -17,19 +17,19 @@ router.post("/new", withAuth, async (req, res) => {
   // Adds a new question
 });
 
-router.get("/:id", withAuth, async (req,res)=> {
-  const questionsData = await Question.findAll({
-    where:{
-      category_id: req.params.id
-    }
-  })
-  const questions = questionsData.map((question) => question.get({ plain: true }));
-  const question = questions[Math.floor(date * Math.random() * (date * 1000000)) %
-    questions.length]
+// router.get("/:id", withAuth, async (req,res)=> {
+//   const questionsData = await Question.findAll({
+//     where:{
+//       category_id: req.params.id
+//     }
+//   })
+//   const questions = questionsData.map((question) => question.get({ plain: true }));
+//   const question = questions[Math.floor(date * Math.random() * (date * 1000000)) %
+//     questions.length]
   
-  console.log(question);
+//   console.log(question);
 
-  res.status(200).json(question)
-})
+//   res.status(200).json(question)
+// })
 
 module.exports = router;

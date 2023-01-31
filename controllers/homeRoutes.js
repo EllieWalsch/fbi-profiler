@@ -32,9 +32,6 @@ router.get("/subject/:id", async (req, res) => {
   // Loads subject page
 });
 
-<<<<<<< HEAD
-router.get("/questions", withAuth, async (req, res) => {
-=======
 router.get("/add-subject", async (_,res) => {
   try {
     res.render("add-subject")
@@ -44,15 +41,7 @@ router.get("/add-subject", async (_,res) => {
 })
 
 router.get("/question/:id", withAuth, async (req, res) => {
->>>>>>> main
   try {
-    // const questionData = await Question.findOne({
-    //   include: [Category],
-    // });
-
-    // const questions = questionData.map((question) =>
-    //   question.get({ plain: true })
-    // );
 
     res.render("questions", {
       loggedIn: req.session.logged_in

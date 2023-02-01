@@ -31,6 +31,7 @@ const saver = async () =>{
   console.log(subjectTag);
   console.log(questiontype);
   questionanswersaver(subjectTag,answerValue,questiontype)
+  .then(()=> document.location.replace("/"))
 }
 
 

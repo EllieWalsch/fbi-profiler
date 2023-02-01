@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Subject } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-router.post("/new", async (req, res) => {
+router.post("/new", withAuth, async (req, res) => {
   try {
     console.log(req.body)
     console.log(req.session)

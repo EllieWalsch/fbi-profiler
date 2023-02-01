@@ -17,19 +17,19 @@ Subject.init(
     },
     type_one_answers: {
       type: DataTypes.STRING,
-      allowNull: true,
+      defaultValue: "[0]",
     },
     type_two_answers: {
         type: DataTypes.STRING,
-        allowNull: true,
+        defaultValue: "[0]",
     },
     type_three_answers: {
         type: DataTypes.STRING,
-        allowNull: true,
+        defaultValue: "[0]",
     },
     type_four_answers: {
         type: DataTypes.STRING,
-        allowNull: true,
+        defaultValue: "[0]",
     },
     profile_assignment: {
         type: DataTypes.STRING,

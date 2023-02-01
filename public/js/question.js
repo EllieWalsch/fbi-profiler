@@ -13,7 +13,7 @@ async function questionanswersaver(subject,value,type) {
         alert('Failed to update subject answer');
       }
     }
-  };
+  }
 
 
 
@@ -26,7 +26,7 @@ const listener = async (event) => {
     answerValue = event.target.value;
     console.log(answerValue);    
 }
-const saver = async (event) =>{
+const saver = async () =>{
   console.log(answerValue);
   console.log(subjectTag);
   console.log(questiontype);

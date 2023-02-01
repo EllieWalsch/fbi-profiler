@@ -96,20 +96,4 @@ if (req.body.type == "Type 1") {
   // Update an answer type to subject
 });
 
-
-// router.get("/:id", withAuth, async (req,res)=> {
-//   const questionsData = await Question.findAll({
-//     where:{
-//       category_id: req.params.id
-//     }
-//   })
-//   const questions = questionsData.map((question) => question.get({ plain: true }));
-//   const question = questions[Math.floor(date * Math.random() * (date * 1000000)) %
-//     questions.length]
-  
-//   console.log(question);
-
-//   res.status(200).json(question)
-// })
-
 module.exports = router;

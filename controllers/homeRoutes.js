@@ -22,7 +22,7 @@ router.get("/", async (req, res) => {
   // Loads homepage (list of all subjects & their personality type)
 });
 
-router.get("/subject/:id", async (req, res) => {
+router.get("/subject/:id", withAuth, async (req, res) => {
   try {
     const subjectData = await Subject.findByPk(req.params.id);
 
@@ -85,6 +85,16 @@ router.get("/questions", withAuth, async (req, res) => {
   // loads questions page with buttons
 });
 
+router.get("/add-subject", withAuth, async (req, res) => {
+  try {
+    res.render("add-subject", {
+      loggedIn: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
 router.get("/login", (req, res) => {
   // If the user is already logged in, redirect the request to home
   if (req.session.logged_in) {
@@ -95,7 +105,5 @@ router.get("/login", (req, res) => {
   res.render("login");
   // Loads login page
 });
-
-
 
 module.exports = router;

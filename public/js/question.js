@@ -19,7 +19,7 @@ async function questionanswersaver(subject,value,type) {
 
 
 
-let answerValue;
+let answerValue = 0;
 
 const listener = async (event) => {
     event.preventDefault();

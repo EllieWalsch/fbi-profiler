@@ -2,7 +2,32 @@
     <h2>{{name}}</h2>
     <div class="summaryContent">
         <p>{{profile_assignment}} </p>
-        <div id="chart">testtesttesttesttesttesttesttesttest</div>
     </div>
+</div>
 
- </div>
+<div style="width:500px">
+  <canvas id="myChart"></canvas>
+</div>
+
+<script>
+  window.addEventListener("load", (event) => {
+  const container = document.getElementById('myChart');
+  const dataArray = [
+    {{averageScore subject.type_one_answers}}, 
+    {{averageScore subject.type_two_answers}}, 
+    {{averageScore subject.type_three_answers}}, 
+    {{averageScore subject.type_four_answers}}]
+
+  new Chart(container, {
+    type: 'radar',
+    data: {
+      labels: ['Emotions', 'Thoughts', 'Confidence', 'Consistency'],
+      datasets: [{
+        label: 'Score',
+        data: dataArray,
+        borderWidth: 1
+      }]
+    },
+  });
+}); 
+</script>

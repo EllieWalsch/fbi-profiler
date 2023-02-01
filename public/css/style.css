@@ -50,6 +50,7 @@ nav button {
 
 a:hover, nav button:hover {
     color: var(--accent2);
+    cursor:pointer;
 }
 
 .home {
@@ -81,6 +82,7 @@ a:hover, nav button:hover {
 .home button:hover, #questionType button:hover, #questionForm button:hover, #askQuestion:hover, #createSubject:hover {
     color: var(--accent2);
     border: 15px solid var(--accent2);
+    cursor:pointer;
 }
 
 .summary {
@@ -102,6 +104,7 @@ a:hover, nav button:hover {
 
 .summary h2:hover {
   color: var(--accent2);
+  cursor: pointer;
 }
 
 .typeSummary {
@@ -175,10 +178,6 @@ a:hover, nav button:hover {
     color: var(--accent1);
     font-size: 45px;
 }
-
-/* #questionType {
-    display: none;
-} */
 
 #questionType div {
     display: flex;
@@ -373,6 +372,13 @@ input[type="range"] {
     margin: auto;
   }
 
+  .summaryChart h2 {
+    font-family: 'Share Tech Mono', monospace;
+    color: var(--accent1);
+    font-size: 45px;
+    text-align: center;
+  }
+
   .summaryChart p {
     font-family: 'Share Tech Mono', monospace;
     color: var(--accent1);
@@ -381,11 +387,11 @@ input[type="range"] {
 
   .summaryContent {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
 
   #chart {
-    width: 50%;
+    margin: auto;
   }
 
   #askQuestion {
@@ -395,4 +401,17 @@ input[type="range"] {
 
   a {
     text-decoration: none;
+  }
+
+  #loginBtn:hover, #signUpBtn:hover {
+    cursor: pointer;
+  }
+
+  #questionTypeNumber {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 50px;
+    text-align: center;
+    margin: 0;
+    color: var(--accent1);
+    text-decoration: underline;
   }

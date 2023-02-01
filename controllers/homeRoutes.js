@@ -9,7 +9,11 @@ let subjectPass;
 
 router.get("/", withAuth, async (req, res) => {
   try {
-    const subjectData = await Subject.findAll();
+    const subjectData = await Subject.findAll({
+      where:{
+        user_id: req.session.user_id
+      }
+    });
 
     const subjects = subjectData.map((subject) => subject.get({ plain: true }));
 

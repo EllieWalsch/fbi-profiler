@@ -1,5 +1,21 @@
 <div id="subjectProfile">
     {{> profile-chart}}
 
-    <a href="/questions" id="askQuestion">Ask Question</a>
+<section id="questionType">
+    <h2>Ask a Question</h2>
+    <div>
+    <a href="/questions/1">
+    <button id="type1">Type1</button>
+    </a>
+    <a href="/questions/2">
+    <button id="type2">Type2</button>
+    </a>
+    <a href="/questions/3">
+    <button id="type3">Type3</button>
+    </a>
+    <a href="/questions/4">
+    <button id="type4">Type4</button>
+    </a>
 </div>
+</section>
+{{> questiondisplay}}

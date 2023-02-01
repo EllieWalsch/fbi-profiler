@@ -77,10 +77,10 @@ router.get("/questions/:id", withAuth, async (req, res) => {
   // loads questions page with buttons
 });
 
-router.get("/questions", withAuth, async (req, res) => {
+router.get("/add-question", withAuth, async (req, res) => {
   try {
 
-    res.render("questions", {
+    res.render("add-question", {
       loggedIn: req.session.logged_in
     });
   } catch (err) {

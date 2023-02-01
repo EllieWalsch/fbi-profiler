@@ -42,7 +42,6 @@ router.post("/new", withAuth, async (req, res) => {
   try {
     const newQuestion = await Question.create({
       ...req.body,
-      user_id: req.session.user_id,
     });
 
     res.status(200).json(newQuestion);

@@ -7,7 +7,7 @@ let subjectPass;
 
 
 
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
     const subjectData = await Subject.findAll();
 

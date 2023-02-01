@@ -40,3 +40,5 @@ const questionsubmit = document.getElementById("questionSubmit")
 questionsubmit.addEventListener("click",saver)
 const subjectTag = document.getElementById("subjectName").innerHTML
 const questiontype = document.getElementById("questionTypeNumber").innerHTML
+
+

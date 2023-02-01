@@ -1,7 +1,42 @@
 const router = require("express").Router();
 const { Subject, Question } = require("../../models");
 const withAuth = require("../../utils/auth");
-// let date = Date.now() % 1000;
+
+
+ function averager(array) {
+  let arrayParse = JSON.parse(array);
+  let reduceArray = arrayParse.reduce((acc, c) => acc + c, 0);
+  return (Math.round(100*(reduceArray/(arrayParse.length-1))))/100 || 0;
+}
+
+function decider1 (num1,num2) {
+  let Acategory;
+if (num1 >= 0 && num2 >= 0) {
+   Acategory = "Sergeant"
+} else if (num1 >= 0 && num2 <= 0) {
+   Acategory = "Accountant"
+} else if (num1 <= 0 && num2 >= 0) {
+  Acategory= "Salesman"
+} else if (num1 <=0 && num2 <=0) {
+  Acategory="Artist"
+}
+return Acategory
+}
+function decider2(num3,num4) {
+  let Bcategory;
+if (num3 >= 0 && num4 >= 0) {
+  Bcategory = "Manager"
+} else if (num3 >= 0 && num4 <=0) {
+  Bcategory = "Conformist"
+} else if (num3 <= 0 && num4 >= 0) {
+ Bcategory = "Innovator"
+} else if (num3 <=0 && num4 <=0) {
+ Bcategory ="Random Actor"
+}
+return Bcategory
+}
+
+
 
 router.post("/new", withAuth, async (req, res) => {
   try {
@@ -24,7 +59,7 @@ const subjectData = await Subject.findOne({ where:{ name: req.body.subject }})
 const subjectFind = subjectData.get({ plain: true });
 
 console.log(subjectFind);
-let subjectAnswerUpdate;
+
 let keepoldAnswer;
 let parseoldAnswer;
 let parseBodyValue;
@@ -35,7 +70,7 @@ if (req.body.type == "Type 1") {
   parseBodyValue = JSON.parse(req.body.value);
   parseoldAnswer.push(parseBodyValue);
   finalString =JSON.stringify(parseoldAnswer);
-  subjectAnswerUpdate = await Subject.update({
+  await Subject.update({
     type_one_answers: finalString,
   },
   {
@@ -49,7 +84,7 @@ if (req.body.type == "Type 1") {
   parseBodyValue = JSON.parse(req.body.value);
   parseoldAnswer.push(parseBodyValue);
   finalString =JSON.stringify(parseoldAnswer);
-  subjectAnswerUpdate = await Subject.update({
+  await Subject.update({
     type_two_answers: finalString,
   },
   {
@@ -64,7 +99,7 @@ if (req.body.type == "Type 1") {
   finalString =JSON.stringify(parseoldAnswer);
   console.log(parseoldAnswer);
   console.log(typeof finalString);
-  subjectAnswerUpdate = await Subject.update({
+  await Subject.update({
     type_three_answers: finalString,
   },
   {
@@ -77,7 +112,7 @@ if (req.body.type == "Type 1") {
   parseBodyValue = JSON.parse(req.body.value);
   parseoldAnswer.push(parseBodyValue);
   finalString =JSON.stringify(parseoldAnswer);
-  subjectAnswerUpdate = await Subject.update({
+  await Subject.update({
     type_four_answers: finalString,
   },
   {
@@ -86,7 +121,40 @@ if (req.body.type == "Type 1") {
   );
 }
 
-    console.log(subjectAnswerUpdate)
+
+// after running if, takes values, recalculates, runs if statement with new values for determing profile_assignment, saves to subject db
+const newsubjectData = await Subject.findOne({ where:{ name: req.body.subject }})
+const newsubjectFind = newsubjectData.get({ plain: true });
+
+console.log(newsubjectFind);
+
+let getavgtype1 = newsubjectFind.type_one_answers;
+let getavgtype2 = newsubjectFind.type_two_answers;
+let getavgtype3 = newsubjectFind.type_three_answers;
+let getavgtype4 = newsubjectFind.type_four_answers;
+
+let avg1 = averager(getavgtype1);
+let avg2 = averager(getavgtype2);
+let avg3 = averager(getavgtype3);
+let avg4 = averager(getavgtype4);
+
+let Category1 = decider1(avg1,avg2)
+let Category2 = decider2(avg3,avg4);
+console.log(Category1,Category2);
+let pro_assignment = `${Category1} / ${Category2}`
+console.log(pro_assignment);
+await Subject.update({
+  profile_assignment: pro_assignment,
+},
+{
+  where:{name:req.body.subject}
+})
+
+console.log(newsubjectFind, "hhhhheeeeeeyyyyy")
+
+
+
+
 
       res.status(200).json(req.body);
    

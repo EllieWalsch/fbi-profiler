@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { Subject, Question } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-
+// functions for determining types
  function averager(array) {
   let arrayParse = JSON.parse(array);
   let reduceArray = arrayParse.reduce((acc, c) => acc + c, 0);
@@ -19,7 +19,7 @@ if (num1 >= 0 && num2 >= 0) {
   Acategory= "Salesman"
 } else if (num1 <=0 && num2 <=0) {
   Acategory="Artist"
-}
+} 
 return Acategory
 }
 function decider2(num3,num4) {
@@ -150,18 +150,13 @@ await Subject.update({
   where:{name:req.body.subject}
 })
 
-console.log(newsubjectFind, "hhhhheeeeeeyyyyy")
-
-
-
-
 
       res.status(200).json(req.body);
    
   } catch (err) {
     res.status(400).json(err);
   }
-  // Update an answer type to subject
+  // Update an answer type to subject and profile assignment calcs
 });
 
 module.exports = router;

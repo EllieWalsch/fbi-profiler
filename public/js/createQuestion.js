@@ -17,33 +17,14 @@
 //         }).then(()=> document.location.replace("/"))
 //     }
 // });
+
+
+
+
+
+
 function listener(event){
     console.log(event.target.value)
 }
 const info = document.getElementById("addQuestionType")
 info.addEventListener("click", listener)
-// info.forEach(function (element) { 
-//     if (element.checked){
-//     console.log(element.value)}})
-
-
-
-
-// const form = document.querySelector("form")
-
-// form.addEventListener(
-//     "submit",
-//     (event) => {
-//       const data = new FormData(form);
-//       let output = ""
-//       let put = "";
-//       for (const entry of data) {
-//         put=`${output[0]}`
-//         output = `${output}${entry[0]}=${entry[1]}\r`      
-//     }    
-//     console.log(output);
-//     console.log(put)
-//       event.preventDefault();
-//     },
-//     false
-//   );

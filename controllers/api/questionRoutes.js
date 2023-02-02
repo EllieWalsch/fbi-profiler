@@ -2,13 +2,13 @@ const router = require("express").Router();
 const { Subject, Question } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-// functions for determining types
+// functions for taking array avg for determining types
  function averager(array) {
   let arrayParse = JSON.parse(array);
   let reduceArray = arrayParse.reduce((acc, c) => acc + c, 0);
   return (Math.round(100*(reduceArray/(arrayParse.length-1))))/100 || 0;
 }
-
+// function decider 1,2 for sorting types
 function decider1 (num1,num2) {
   let Acategory;
 if (num1 >= 0 && num2 >= 0) {
@@ -43,7 +43,6 @@ router.post("/new", withAuth, async (req, res) => {
     const newQuestion = await Question.create({
       ...req.body,
     });
-
     res.status(200).json(newQuestion);
   } catch (err) {
     res.status(400).json(err);

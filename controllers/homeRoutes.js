@@ -110,7 +110,7 @@ router.get("/login", (req, res) => {
   // Loads login page
 });
 
-router.get("/charts", withAuth, async (req, res) => {
+router.get("/chart", withAuth, async (req, res) => {
   try {
     const subjectData = await Subject.findAll({
       where:{

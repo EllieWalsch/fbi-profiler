@@ -110,4 +110,20 @@ router.get("/login", (req, res) => {
   // Loads login page
 });
 
+router.get("/about", (req, res) => {
+ 
+  res.render("about", {
+    loggedIn: req.session.logged_in
+  });
+  // Loads about page
+});
+
+router.get("/tips", (req, res) => {
+ 
+  res.render("tips",{
+    loggedIn: req.session.logged_in
+  });
+  // Loads tips page
+});
+
 module.exports = router;

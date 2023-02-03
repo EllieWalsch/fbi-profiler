@@ -1,5 +1,5 @@
-const { Model, DataTypes } = require('sequelize');
-const sequelize = require('../config/connection');
+const { Model, DataTypes } = require("sequelize");
+const sequelize = require("../config/connection");
 
 class Subject extends Model {}
 
@@ -20,27 +20,27 @@ Subject.init(
       defaultValue: "[0]",
     },
     type_two_answers: {
-        type: DataTypes.STRING,
-        defaultValue: "[0]",
+      type: DataTypes.STRING,
+      defaultValue: "[0]",
     },
     type_three_answers: {
-        type: DataTypes.STRING,
-        defaultValue: "[0]",
+      type: DataTypes.STRING,
+      defaultValue: "[0]",
     },
     type_four_answers: {
-        type: DataTypes.STRING,
-        defaultValue: "[0]",
+      type: DataTypes.STRING,
+      defaultValue: "[0]",
     },
     profile_assignment: {
-        type: DataTypes.STRING,
-        allowNull: true,
+      type: DataTypes.STRING,
+      allowNull: true,
     },
-    user_id:{
+    user_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "user",
-        key: "id"
-      }
+        key: "id",
+      },
     },
   },
   {
@@ -48,7 +48,7 @@ Subject.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'subject',
+    modelName: "subject",
   }
 );
 

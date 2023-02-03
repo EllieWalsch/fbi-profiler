@@ -418,12 +418,16 @@ input[type="range"] {
     color: var(--accent1);
     font-size: 45px;
     text-align: center;
+    margin-bottom: 0;
   }
 
   .summaryChart p {
     font-family: 'Share Tech Mono', monospace;
     color: var(--accent1);
     width: 50%;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
   }
 
   .summaryContent {

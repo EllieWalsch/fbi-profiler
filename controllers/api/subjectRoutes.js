@@ -18,4 +18,17 @@ router.post("/new", withAuth, async (req, res) => {
   // Adds a new subject
 });
 
+router.delete("/:id", withAuth, async (req, res) => {
+  try {
+    Subject.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+    res.status(200).json("subject deleted!");
+  }catch (err) {
+    res.status(400).json(err);
+  }
+})
+
 module.exports = router;

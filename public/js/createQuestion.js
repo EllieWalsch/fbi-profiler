@@ -15,6 +15,9 @@ questionBtn.addEventListener('click', (event) => {
     if(newQuestion.value === "") {
       alert("Please enter a Question before continuing.")
       return
+    } else if (questionType === undefined){
+      alert("Please mark a radio button")
+      return
     } else {
       const questionName = document.querySelector("#newQuestion").value.trim();
 

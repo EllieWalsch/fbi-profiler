@@ -1,105 +1,110 @@
 :root {
-    --main: #e3ebd4;
-    --accent1: #415355;
-    --accent2: #eb382b;
+  --main: #e3ebd4;
+  --accent1: #415355;
+  --accent2: #eb382b;
 }
 
 body {
-    background-color: var(--main);
-    margin:0
+  background-color: var(--main);
+  margin: 0;
 }
 
 h1 {
-    text-align: center;
-    color: var(--main);
-    margin: 0;
-    padding: 30px;
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 75px;
-    background-color: var(--accent1);
+  text-align: center;
+  color: var(--main);
+  margin: 0;
+  padding: 30px;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 75px;
+  background-color: var(--accent1);
 }
 
 nav {
-    display: flex;
-    justify-content: space-evenly;
-    padding: 15px;
-    background-color: var(--accent1);
-    box-shadow: 0px 5px 6px -1px #4d4f4c;
-  }
-  
+  display: flex;
+  justify-content: space-evenly;
+  padding: 15px;
+  background-color: var(--accent1);
+  box-shadow: 0px 5px 6px -1px #4d4f4c;
+}
+
 nav a {
-    text-decoration: none;
-    font-size: 35px;
-    font-family: Anton, sans-serif;
-    color: var(--main);
-    font-family: 'Share Tech Mono', monospace;
-    transition: 0.3s ease;
-  }
+  text-decoration: none;
+  font-size: 35px;
+  font-family: Anton, sans-serif;
+  color: var(--main);
+  font-family: "Share Tech Mono", monospace;
+  transition: 0.3s ease;
+}
 
 nav button {
-    font-size: 35px;
-    color: var(--main);
-    font-family: Anton, sans-serif;
-    background: none;
-    border: none;
-    margin: 0;
-    padding: 0;
-    font-family: 'Share Tech Mono', monospace;
-    transition: 0.3s ease;
-  }
+  font-size: 35px;
+  color: var(--main);
+  font-family: Anton, sans-serif;
+  background: none;
+  border: none;
+  margin: 0;
+  padding: 0;
+  font-family: "Share Tech Mono", monospace;
+  transition: 0.3s ease;
+}
 
-a:hover, nav button:hover {
-    color: var(--accent2);
-    cursor:pointer;
+a:hover,
+nav button:hover {
+  color: var(--accent2);
+  cursor: pointer;
 }
 
 .home {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .home button {
-    width: 200px;
-    margin: 30px;
-    background-color: var(--main);
-    color: var(--accent1);
-    font-family: Trebuchet MS;
-    font-size: 25px;
-    font-weight: 400;
-    font-style: bold;
-    text-decoration: none;
-    padding: 15px 15px;
-    border: 15px solid var(--accent1);
-    border-radius: 47px;
-    display: inline-block;
-    font-family: 'Share Tech Mono', monospace;
-    transition: 0.3s ease;
-    box-shadow: 0px 5px 6px -1px #4d4f4c;
+  width: 200px;
+  margin: 30px;
+  background-color: var(--main);
+  color: var(--accent1);
+  font-family: Trebuchet MS;
+  font-size: 25px;
+  font-weight: 400;
+  font-style: bold;
+  text-decoration: none;
+  padding: 15px 15px;
+  border: 15px solid var(--accent1);
+  border-radius: 47px;
+  display: inline-block;
+  font-family: "Share Tech Mono", monospace;
+  transition: 0.3s ease;
+  box-shadow: 0px 5px 6px -1px #4d4f4c;
 }
 
-.home button:hover, #questionType button:hover, #questionForm button:hover, #askQuestion:hover, #createSubject:hover {
-    color: var(--accent2);
-    border: 15px solid var(--accent2);
-    cursor:pointer;
+.home button:hover,
+#questionType button:hover,
+#questionForm button:hover,
+#askQuestion:hover,
+#createSubject:hover {
+  color: var(--accent2);
+  border: 15px solid var(--accent2);
+  cursor: pointer;
 }
 
 .summary {
-    width: 40%;
-    border: 10px solid var(--accent1);
-    box-shadow: 0px 5px 6px -1px #4d4f4c;
-    margin-bottom: 50px;
+  width: 40%;
+  border: 10px solid var(--accent1);
+  box-shadow: 0px 5px 6px -1px #4d4f4c;
+  margin-bottom: 50px;
 }
 
 .summary h2 {
-    margin: 0;
-    padding-bottom: 10px;
-    background-color: var(--accent1);
-    color: var(--main);
-    font-size: 50px;
-    font-family: 'Share Tech Mono', monospace;
-    transition: 0.3s ease;
+  margin: 0;
+  padding-bottom: 10px;
+  background-color: var(--accent1);
+  color: var(--main);
+  font-size: 50px;
+  font-family: "Share Tech Mono", monospace;
+  transition: 0.3s ease;
 }
 
 .summary h2:hover {
@@ -108,351 +113,354 @@ a:hover, nav button:hover {
 }
 
 .typeSummary {
-    display: grid;
-    grid-template-columns: 50% 50%;
+  display: grid;
+  grid-template-columns: 50% 50%;
 }
 
 .typeSummary p {
-    color: var(--main);
-    background-color: var(--accent1);
-    border-radius: 47px;
-    margin: 3px;
-    padding: 3px;
-    padding-left: 8px;
-    text-align: left;
-    font-size: 36px;
-    font-family: 'Share Tech Mono', monospace;
+  color: var(--main);
+  background-color: var(--accent1);
+  border-radius: 47px;
+  margin: 3px;
+  padding: 3px;
+  padding-left: 8px;
+  text-align: left;
+  font-size: 36px;
+  font-family: "Share Tech Mono", monospace;
 }
 
 .login {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .login h2 {
-    text-align: center;
-    font-family: 'Share Tech Mono', monospace;
-    color: var(--main);
-    background-color: var(--accent1);
-    margin: 0;
-    padding: 5px;
+  text-align: center;
+  font-family: "Share Tech Mono", monospace;
+  color: var(--main);
+  background-color: var(--accent1);
+  margin: 0;
+  padding: 5px;
 }
 
 .login form div {
-    display: flex;
-    flex-direction: column;
-    border: 10px solid var(--accent1);
-    margin: 35px;
-    box-shadow: 0px 5px 6px -1px #4d4f4c;
+  display: flex;
+  flex-direction: column;
+  border: 10px solid var(--accent1);
+  margin: 35px;
+  box-shadow: 0px 5px 6px -1px #4d4f4c;
 }
 
 .login input {
-    background-color:#cfdabd;
-    border: none;
-    border-radius: 25px;
-    margin: 5px;
-    margin-bottom: 20px;
-    font-size: 20px;
-    font-family: 'Share Tech Mono', monospace;   
+  background-color: #cfdabd;
+  border: none;
+  border-radius: 25px;
+  margin: 5px;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-family: "Share Tech Mono", monospace;
 }
 
 .login label {
-    margin: 5px;
-    font-size: 23px;
-    font-family: 'Share Tech Mono', monospace;
+  margin: 5px;
+  font-size: 23px;
+  font-family: "Share Tech Mono", monospace;
 }
 
 .login button {
-    background-color:#cfdabd;
-    border: none;
-    border-radius: 25px;
-    margin: 5px;
-    font-size: 20px;
-    font-family: 'Share Tech Mono', monospace;   
+  background-color: #cfdabd;
+  border: none;
+  border-radius: 25px;
+  margin: 5px;
+  font-size: 20px;
+  font-family: "Share Tech Mono", monospace;
 }
 
-#questionType h2, #questionForm h2 {
-    text-align: center;
-    font-family: 'Share Tech Mono', monospace;
-    color: var(--accent1);
-    font-size: 45px;
+#questionType h2,
+#questionForm h2 {
+  text-align: center;
+  font-family: "Share Tech Mono", monospace;
+  color: var(--accent1);
+  font-size: 45px;
 }
 
 #questionType div {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #questionType button {
-    width: 200px;
-    margin: 30px;
-    background-color: var(--main);
-    color: var(--accent1);
-    font-family: Trebuchet MS;
-    font-size: 25px;
-    font-weight: 400;
-    font-style: bold;
-    text-decoration: none;
-    padding: 15px 15px;
-    border: 15px solid var(--accent1);
-    border-radius: 47px;
-    display: inline-block;
-    font-family: 'Share Tech Mono', monospace;
-    transition: 0.3s ease;
-    box-shadow: 0px 5px 6px -1px #4d4f4c;
+  width: 200px;
+  margin: 30px;
+  background-color: var(--main);
+  color: var(--accent1);
+  font-family: Trebuchet MS;
+  font-size: 25px;
+  font-weight: 400;
+  font-style: bold;
+  text-decoration: none;
+  padding: 15px 15px;
+  border: 15px solid var(--accent1);
+  border-radius: 47px;
+  display: inline-block;
+  font-family: "Share Tech Mono", monospace;
+  transition: 0.3s ease;
+  box-shadow: 0px 5px 6px -1px #4d4f4c;
 }
 
 #questionForm {
-    margin: 35px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
+  margin: 35px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 }
 
 input[type="range"] {
-    -webkit-appearance: none;
-    appearance: none;
-    background: transparent;
-    cursor: pointer;
-    width: 700px;
-    margin: auto;
-  }
-  
-  input[type="range"]:focus {
-    outline: none;
-  }
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+  width: 700px;
+  margin: auto;
+}
 
-  input[type="range"]::-webkit-slider-runnable-track {
-    background-color: #cfdabd;
-    border-radius: 0.5rem;
-    height: 15px;
-  }
-  
-  /* slider thumb */
-  input[type="range"]::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    margin-top: -2.5px;
-    background-color: var(--accent1);
-    border-radius: 25px;
-    height: 20px;
-    width: 20px;
-  }
-  
-  input[type="range"]:focus::-webkit-slider-thumb {
-    outline: 3px solid var(--accent1);
-    outline-offset: 0.125rem;
-  }
-  
-  /*********** Firefox styles ***********/
-  /* slider track */
-  input[type="range"]::-moz-range-track {
-    background-color: #cfdabd;
-    border-radius: 0.5rem;
-    height: 15px;
-  }
-  
-  /* slider thumb */
-  input[type="range"]::-moz-range-thumb {
-    background-color: var(--accent1);
-    border: none; 
-    border-radius: 25px;
-    height: 20px;
-    width: 20px;
-  }
-  
-  input[type="range"]:focus::-moz-range-thumb{
-    outline: 3px solid var(--accent1);
-    outline-offset: 0.125rem;
-  }
+input[type="range"]:focus {
+  outline: none;
+}
 
-  #questionForm div {
-    display: flex;
-    flex-direction: column;
-  }
+input[type="range"]::-webkit-slider-runnable-track {
+  background-color: #cfdabd;
+  border-radius: 0.5rem;
+  height: 15px;
+}
 
-  #questionForm button {
-    width: 200px;
-    margin: auto;
-    background-color: var(--main);
-    color: var(--accent1);
-    font-family: Trebuchet MS;
-    font-size: 25px;
-    font-weight: 400;
-    font-style: bold;
-    text-decoration: none;
-    padding: 15px 15px;
-    border: 15px solid var(--accent1);
-    border-radius: 47px;
-    display: inline-block;
-    font-family: 'Share Tech Mono', monospace;
-    transition: 0.3s ease;
-    box-shadow: 0px 5px 6px -1px #4d4f4c;
+/* slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -2.5px;
+  background-color: var(--accent1);
+  border-radius: 25px;
+  height: 20px;
+  width: 20px;
+}
+
+input[type="range"]:focus::-webkit-slider-thumb {
+  outline: 3px solid var(--accent1);
+  outline-offset: 0.125rem;
+}
+
+/*********** Firefox styles ***********/
+/* slider track */
+input[type="range"]::-moz-range-track {
+  background-color: #cfdabd;
+  border-radius: 0.5rem;
+  height: 15px;
+}
+
+/* slider thumb */
+input[type="range"]::-moz-range-thumb {
+  background-color: var(--accent1);
+  border: none;
+  border-radius: 25px;
+  height: 20px;
+  width: 20px;
+}
+
+input[type="range"]:focus::-moz-range-thumb {
+  outline: 3px solid var(--accent1);
+  outline-offset: 0.125rem;
+}
+
+#questionForm div {
+  display: flex;
+  flex-direction: column;
+}
+
+#questionForm button {
+  width: 200px;
+  margin: auto;
+  background-color: var(--main);
+  color: var(--accent1);
+  font-family: Trebuchet MS;
+  font-size: 25px;
+  font-weight: 400;
+  font-style: bold;
+  text-decoration: none;
+  padding: 15px 15px;
+  border: 15px solid var(--accent1);
+  border-radius: 47px;
+  display: inline-block;
+  font-family: "Share Tech Mono", monospace;
+  transition: 0.3s ease;
+  box-shadow: 0px 5px 6px -1px #4d4f4c;
 }
 
 #subjectProfile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #askQuestion {
-    width: 200px;
-    margin: 30px;
-    background-color: var(--main);
-    color: var(--accent1);
-    font-family: Trebuchet MS;
-    font-size: 25px;
-    font-weight: 400;
-    font-style: bold;
-    text-decoration: none;
-    text-align: center;
-    padding: 15px 15px;
-    border: 15px solid var(--accent1);
-    border-radius: 47px;
-    display: inline-block;
-    font-family: 'Share Tech Mono', monospace;
-    transition: 0.3s ease;
-    box-shadow: 0px 5px 6px -1px #4d4f4c;
-  }
+  width: 200px;
+  margin: 30px;
+  background-color: var(--main);
+  color: var(--accent1);
+  font-family: Trebuchet MS;
+  font-size: 25px;
+  font-weight: 400;
+  font-style: bold;
+  text-decoration: none;
+  text-align: center;
+  padding: 15px 15px;
+  border: 15px solid var(--accent1);
+  border-radius: 47px;
+  display: inline-block;
+  font-family: "Share Tech Mono", monospace;
+  transition: 0.3s ease;
+  box-shadow: 0px 5px 6px -1px #4d4f4c;
+}
 
-  .profile h2 {
-    font-family: 'Share Tech Mono', monospace;
-  }
+.profile h2 {
+  font-family: "Share Tech Mono", monospace;
+}
 
-  #createQuestion {
-    width: 200px;
-    margin: 30px;
-    background-color: var(--main);
-    color: var(--accent1);
-    font-family: Trebuchet MS;
-    font-size: 25px;
-    font-weight: 400;
-    font-style: bold;
-    text-decoration: none;
-    padding: 15px 15px;
-    border: 15px solid var(--accent1);
-    border-radius: 47px;
-    display: inline-block;
-    font-family: 'Share Tech Mono', monospace;
-    transition: 0.3s ease;
-    box-shadow: 0px 5px 6px -1px #4d4f4c;
-    text-align: center;
-  }
+#createQuestion {
+  width: 200px;
+  margin: 30px;
+  background-color: var(--main);
+  color: var(--accent1);
+  font-family: Trebuchet MS;
+  font-size: 25px;
+  font-weight: 400;
+  font-style: bold;
+  text-decoration: none;
+  padding: 15px 15px;
+  border: 15px solid var(--accent1);
+  border-radius: 47px;
+  display: inline-block;
+  font-family: "Share Tech Mono", monospace;
+  transition: 0.3s ease;
+  box-shadow: 0px 5px 6px -1px #4d4f4c;
+  text-align: center;
+}
 
-  #newQuestion {
-    width: 500px;
-    height: 45px;
-    text-align: center;
-    background-color: #cfdabd;
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 30px;
-    border: none;
-    border-radius: 25px;
-  }
+#newQuestion {
+  width: 500px;
+  height: 45px;
+  text-align: center;
+  background-color: #cfdabd;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 30px;
+  border: none;
+  border-radius: 25px;
+}
 
-  #addQuestion {
-    display: flex;
-    flex-direction: column;
-  }
+#addQuestion {
+  display: flex;
+  flex-direction: column;
+}
 
-  #addQuestion div {
-    margin: auto;
-    margin-top: 30px;
-  }
+#addQuestion div {
+  margin: auto;
+  margin-top: 30px;
+}
 
-  #createSubject {
-    width: 200px;
-    margin: 30px;
-    background-color: var(--main);
-    color: var(--accent1);
-    font-family: Trebuchet MS;
-    font-size: 25px;
-    font-weight: 400;
-    font-style: bold;
-    text-decoration: none;
-    padding: 15px 15px;
-    border: 15px solid var(--accent1);
-    border-radius: 47px;
-    display: inline-block;
-    font-family: 'Share Tech Mono', monospace;
-    transition: 0.3s ease;
-    box-shadow: 0px 5px 6px -1px #4d4f4c;
-  }
+#createSubject {
+  width: 200px;
+  margin: 30px;
+  background-color: var(--main);
+  color: var(--accent1);
+  font-family: Trebuchet MS;
+  font-size: 25px;
+  font-weight: 400;
+  font-style: bold;
+  text-decoration: none;
+  padding: 15px 15px;
+  border: 15px solid var(--accent1);
+  border-radius: 47px;
+  display: inline-block;
+  font-family: "Share Tech Mono", monospace;
+  transition: 0.3s ease;
+  box-shadow: 0px 5px 6px -1px #4d4f4c;
+}
 
-  #newSubject {
-    width: 500px;
-    height: 45px;
-    text-align: center;
-    background-color: #cfdabd;
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 30px;
-    border: none;
-    border-radius: 25px;
-  }
+#newSubject {
+  width: 500px;
+  height: 45px;
+  text-align: center;
+  background-color: #cfdabd;
+  font-family: "Share Tech Mono", monospace;
+  font-size: 30px;
+  border: none;
+  border-radius: 25px;
+}
 
-  #addSubject {
-    display: flex;
-    flex-direction: column;
-  }
+#addSubject {
+  display: flex;
+  flex-direction: column;
+}
 
-  #addSubject button,  #addSubject input {
-    margin: auto;
-    margin-top: 30px;
-  }
+#addSubject button,
+#addSubject input {
+  margin: auto;
+  margin-top: 30px;
+}
 
-  #subjectProfile {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 20px;
-  }
+#subjectProfile {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20px;
+}
 
-  .summaryChart {
-    margin: auto;
-  }
+.summaryChart {
+  margin: auto;
+}
 
-  .summaryChart h2 {
-    font-family: 'Share Tech Mono', monospace;
-    color: var(--accent1);
-    font-size: 45px;
-    text-align: center;
-  }
+.summaryChart h2 {
+  font-family: "Share Tech Mono", monospace;
+  color: var(--accent1);
+  font-size: 45px;
+  text-align: center;
+}
 
-  .summaryChart p {
-    font-family: 'Share Tech Mono', monospace;
-    color: var(--accent1);
-    width: 50%;
-  }
+.summaryChart p {
+  font-family: "Share Tech Mono", monospace;
+  color: var(--accent1);
+  width: 50%;
+}
 
-  .summaryContent {
-    display: flex;
-    flex-direction: column;
-  }
+.summaryContent {
+  display: flex;
+  flex-direction: column;
+}
 
-  #chart {
-    margin: auto;
-  }
+#chart {
+  margin: auto;
+}
 
-  #askQuestion {
-    margin: auto;
-    margin-top: 30px;
-  }
+#askQuestion {
+  margin: auto;
+  margin-top: 30px;
+}
 
-  a {
-    text-decoration: none;
-  }
+a {
+  text-decoration: none;
+}
 
-  #loginBtn:hover, #signUpBtn:hover {
-    cursor: pointer;
-  }
+#loginBtn:hover,
+#signUpBtn:hover {
+  cursor: pointer;
+}
 
-  #questionTypeNumber {
-    font-family: 'Share Tech Mono', monospace;
-    font-size: 50px;
-    text-align: center;
-    margin: 0;
-    color: var(--accent1);
-    text-decoration: underline;
-  }
+#questionTypeNumber {
+  font-family: "Share Tech Mono", monospace;
+  font-size: 50px;
+  text-align: center;
+  margin: 0;
+  color: var(--accent1);
+  text-decoration: underline;
+}

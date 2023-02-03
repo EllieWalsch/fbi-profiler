@@ -474,3 +474,11 @@ input[type="range"] {
   #addQuestionType input {
     background-color: #cfdabd;
   }
+
+  #info {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 30px;
+    color: var(--accent1);
+    width: 60%;
+    margin: 20px;
+  }

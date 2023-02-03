@@ -1,0 +1,50 @@
+
+<canvas id="myChart"></canvas>
+
+<script>
+  window.addEventListener("load", (event) => {
+  const container = document.getElementById('myChart');
+  const subjects =  [{{#each subjects as |subject|}}
+    "{{subject.name}}",
+    {{/each}}]
+const dataEmotions = [{{#each subjects as |subject|}}
+    "{{averageScore subject.type_one_answers}}",
+    {{/each}}]
+const dataThoughts = [{{#each subjects as |subject|}}
+    "{{averageScore subject.type_two_answers}}",
+    {{/each}}]
+const dataConfidence = [{{#each subjects as |subject|}}
+    "{{averageScore subject.type_three_answers}}",
+    {{/each}}]
+const dataConsistency = [{{#each subjects as |subject|}}
+    "{{averageScore subject.type_four_answers}}",
+    {{/each}}]
+
+  new Chart(container, {
+    type: 'bar',
+    data: {
+      labels: subjects,
+      datasets: [{
+        label: 'Emotions',
+        data: dataEmotions,
+        borderWidth: 1
+      },
+      {
+        label: 'Thoughts',
+        data: dataThoughts,
+        borderWidth: 1
+      },
+      {
+        label: 'Cofidence',
+        data: dataConfidence,
+        borderWidth: 1
+      },
+      {
+        label: 'Consistency',
+        data: dataConsistency,
+        borderWidth: 1
+      }]
+    }
+  });
+}); 
+</script>

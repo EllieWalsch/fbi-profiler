@@ -110,4 +110,22 @@ router.get("/login", (req, res) => {
   // Loads login page
 });
 
+router.get("/charts", withAuth, async (req, res) => {
+  try {
+    const subjectData = await Subject.findAll({
+      where:{
+        user_id: req.session.user_id
+      }
+    });
+
+    const subjects = subjectData.map((subject) => subject.get({ plain: true }));
+    res.render('charts', {subjects,
+      loggedIn: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+
+});
+
 module.exports = router;

@@ -79,7 +79,7 @@ a:hover, nav button:hover {
     box-shadow: 0px 5px 6px -1px #4d4f4c;
 }
 
-.home button:hover, #questionType button:hover, #questionForm button:hover, #askQuestion:hover, #createSubject:hover {
+.home button:hover, #questionType button:hover, #questionForm button:hover, #askQuestion:hover, #createSubject:hover, #createQuestion:hover {
     color: var(--accent2);
     border: 15px solid var(--accent2);
     cursor:pointer;
@@ -444,7 +444,7 @@ input[type="range"] {
     text-decoration: none;
   }
 
-  #loginBtn:hover, #signUpBtn:hover {
+  #loginBtn:hover, #signUpBtn:hover, #addQuestionType input:hover, #createQuestion:hover {
     cursor: pointer;
   }
 
@@ -455,4 +455,17 @@ input[type="range"] {
     margin: 0;
     color: var(--accent1);
     text-decoration: underline;
+  }
+
+  #btnHome {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #addQuestionType {
+    font-family: 'Share Tech Mono', monospace;
+  }
+
+  #addQuestionType input {
+    background-color: #cfdabd;
   }

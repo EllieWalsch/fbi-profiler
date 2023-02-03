@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const { Subject, Question, Category } = require("../models");
+const { Subject, Question } = require("../models");
 const withAuth = require("../utils/auth");
 let date = Date.now() % 1000;
 let subjectPass;

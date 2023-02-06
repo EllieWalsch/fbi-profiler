@@ -1,0 +1,9 @@
+<div id="btnlistquestionpage">
+
+{{#each questions as |question|}}
+
+<button id="deleteQuestion" data-id="{{question.id}}">Click to delete: {{question.question}}</button>
+
+{{/each}}
+</div>
+<script src="/js/deletequestion.js"></script>

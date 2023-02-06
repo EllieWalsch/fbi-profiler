@@ -1,30 +1,37 @@
 const router = require("express").Router();
-const { Subject, Question, Category } = require("../models");
+const { Subject, Question } = require("../models");
 const withAuth = require("../utils/auth");
+let date = Date.now() % 1000;
+let subjectPass;
 
-router.get("/", async (req, res) => {
+router.get("/", withAuth, async (req, res) => {
   try {
-    const subjectData = await Subject.findAll();
+    const subjectData = await Subject.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
 
     const subjects = subjectData.map((subject) => subject.get({ plain: true }));
 
-    res.render('homepage', {subjects,
-      loggedIn: req.session.logged_in
-    });
+    res.render("homepage", { subjects, loggedIn: req.session.logged_in });
   } catch (err) {
     res.status(500).json(err);
   }
   // Loads homepage (list of all subjects & their personality type)
 });
 
-router.get("/subject/:id", async (req, res) => {
+router.get("/subject/:id", withAuth, async (req, res) => {
   try {
     const subjectData = await Subject.findByPk(req.params.id);
 
     const subject = subjectData.get({ plain: true });
 
+    subjectPass = req.params.id;
+
     res.render("subject", {
-      subject, loggedIn: req.session.logged_in
+      subject,
+      loggedIn: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -32,25 +39,64 @@ router.get("/subject/:id", async (req, res) => {
   // Loads subject page
 });
 
-router.get("/add-subject", async (_,res) => {
+router.get("/add-subject", async (req, res) => {
   try {
-    res.render("add-subject")
-  } catch (err) {
-    res.status(500).json(err);
-  }
-})
-
-router.get("/question/:id", withAuth, async (req, res) => {
-  try {
-
-    res.render("questions", {
-      loggedIn: req.session.logged_in
+    res.render("add-subject", {
+      loggedIn: req.session.logged_in,
     });
   } catch (err) {
     res.status(500).json(err);
   }
-  // Loads questions to ask with form - how do we make this one of each type?
-  // math random
+});
+
+router.get("/questions/:id", withAuth, async (req, res) => {
+  try {
+    const questionsData = await Question.findAll({
+      where: {
+        category_id: req.params.id,
+      },
+    });
+    const subjectData = await Subject.findByPk(subjectPass);
+
+    const subject = subjectData.get({ plain: true });
+
+    const questions = questionsData.map((question) =>
+      question.get({ plain: true })
+    );
+    const question =
+      questions[
+        Math.floor(date * Math.random() * (date * 1000000)) % questions.length
+      ];
+    res.render("subject", {
+      subject,
+      question,
+      loggedIn: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+  // loads questions page with buttons
+});
+
+router.get("/add-question", withAuth, async (req, res) => {
+  try {
+    res.render("add-question", {
+      loggedIn: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+  // loads questions page with buttons
+});
+
+router.get("/add-subject", withAuth, async (req, res) => {
+  try {
+    res.render("add-subject", {
+      loggedIn: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.get("/login", (req, res) => {
@@ -63,6 +109,58 @@ router.get("/login", (req, res) => {
   res.render("login");
   // Loads login page
 });
+
+router.get("/about", (req, res) => {
+ 
+  res.render("about", {
+    loggedIn: req.session.logged_in
+  });
+  // Loads about page
+});
+
+router.get("/tips", (req, res) => {
+ 
+  res.render("tips",{
+    loggedIn: req.session.logged_in
+  });
+  // Loads tips page
+});
+
+router.get("/chart", withAuth, async (req, res) => {
+  try {
+    const subjectData = await Subject.findAll({
+      where:{
+        user_id: req.session.user_id
+      }
+    });
+
+    const subjects = subjectData.map((subject) => subject.get({ plain: true }));
+    res.render('charts', {subjects,
+      loggedIn: req.session.logged_in
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+
+});
+
+router.get("/listquestion",withAuth, async (req,res)=>{
+  try {
+    const questionsData = await Question.findAll();
+    
+    const questions = questionsData.map((question) =>
+      question.get({ plain: true })
+    );
+    
+    res.render("listquestion", {
+      questions,
+      loggedIn: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+  // loads list all questions page 
+})
 
 
 module.exports = router;

@@ -1,0 +1,12 @@
+<section id="questionForm">
+  <p id="questionTypeNumber">Type {{question.category_id}}</p>
+  <h2>{{question.question}}</h2>
+  <div class="questionSetup">
+    <input id="questionValue" type="range" min="-5" max="5" step="1" />
+    <br />
+    <button type="submit" id="questionSubmit">Submit</button>
+    <br />
+    <p id="questionTypeNumber" hidden>Type {{question.category_id}}</p>
+  </div>
+</section>
+<script src="/js/question.js"></script>

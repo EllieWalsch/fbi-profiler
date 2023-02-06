@@ -1,8 +1,8 @@
 // import models
-const Question = require('./Questionsmodel');
-const Category = require('./Categorymodel');
-const Subject = require('./Subjectmodel');
-const User = require('./Usermodel');
+const Question = require("./Questionsmodel");
+const Category = require("./Categorymodel");
+const Subject = require("./Subjectmodel");
+const User = require("./Usermodel");
 
 // User have many Subjects
 User.hasMany(Subject);

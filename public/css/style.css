@@ -520,3 +520,61 @@ a {
   color: var(--accent1);
   margin: 20px;
 }
+
+#btnlistquestion {
+  display: flex;
+  justify-content: center;
+}
+
+#btnlistquestion button {
+  margin-bottom: 40px;
+  background-color: var(--main);
+  color: var(--accent1);
+  font-size: 15px;
+  font-style: bold;
+  text-decoration: none;
+  padding: 10px;
+  border: 8px solid var(--accent1);
+  border-radius: 47px;
+  display: inline-block;
+  font-family: "Share Tech Mono", monospace;
+  transition: 0.3s ease;
+  box-shadow: 0px 5px 6px -1px #4d4f4c;
+  text-align: center;
+}
+
+#btnlistquestion button:hover {
+  color: var(--accent2);
+  border: 8px solid var(--accent2);
+  cursor: pointer;
+}
+
+#btnlistquestionpage {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+}
+
+#btnlistquestionpage button {
+  margin-bottom: 40px;
+  background-color: var(--main);
+  color: var(--accent1);
+  font-size: 15px;
+  font-style: bold;
+  text-decoration: none;
+  padding: 10px;
+  border: 8px solid var(--accent1);
+  border-radius: 47px;
+  display: inline-block;
+  font-family: "Share Tech Mono", monospace;
+  transition: 0.3s ease;
+  box-shadow: 0px 5px 6px -1px #4d4f4c;
+  width: -moz-fit-content;
+  width: fit-content
+}
+
+#btnlistquestionpage button:hover {
+  color: var(--accent2);
+  border: 8px solid var(--accent2);
+  cursor: pointer;
+}

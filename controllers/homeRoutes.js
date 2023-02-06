@@ -144,4 +144,23 @@ router.get("/chart", withAuth, async (req, res) => {
 
 });
 
+router.get("/listquestion",withAuth, async (req,res)=>{
+  try {
+    const questionsData = await Question.findAll();
+    
+    const questions = questionsData.map((question) =>
+      question.get({ plain: true })
+    );
+    
+    res.render("listquestion", {
+      questions,
+      loggedIn: req.session.logged_in,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+  // loads list all questions page 
+})
+
+
 module.exports = router;

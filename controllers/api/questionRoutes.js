@@ -161,4 +161,17 @@ router.put("/:subject", async (req, res) => {
   // Update an answer type to subject and profile assignment calcs
 });
 
+router.delete("/:id", withAuth , async (req,res)=>{
+  try {
+    Question.destroy({
+      where: {
+        id: req.params.id
+      }
+    })
+    res.status(200).json("question deleted!");
+  }catch (err) {
+    res.status(400).json(err);
+  }
+})
+
 module.exports = router;

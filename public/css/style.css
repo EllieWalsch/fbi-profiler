@@ -550,9 +550,7 @@ a {
 }
 
 #btnlistquestionpage {
-  display: flex;
-  flex-direction: column;
-  justify-content:center;
+  text-align: center; 
 }
 
 #btnlistquestionpage button {
@@ -569,8 +567,7 @@ a {
   font-family: "Share Tech Mono", monospace;
   transition: 0.3s ease;
   box-shadow: 0px 5px 6px -1px #4d4f4c;
-  width: -moz-fit-content;
-  width: fit-content
+  width: 50%;
 }
 
 #btnlistquestionpage button:hover {

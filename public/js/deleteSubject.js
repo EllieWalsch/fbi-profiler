@@ -1,9 +1,8 @@
 const deleteBtn = document.querySelector("#deleteSubject");
 
-deleteBtn.addEventListener("click", ()=> {
-    const location = window.location.href
-    const locationLength = location.length
-    const subjectId = Number(location.charAt(locationLength-1))
+deleteBtn.addEventListener("click", (event)=> {
+    let subjectId = event.target.getAttribute("data-id");
+    console.log(subjectId)
     fetch(`/api/subject/${subjectId}`, {
         method: "DELETE",
       })
